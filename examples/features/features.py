@@ -30,29 +30,21 @@ def control_motors():
             while rov.run:
                 if keys.state('K_UP'):
                     print('Forward')
-                elif keys.state('K_DOWN'):
                     UP = True
                 else:
                     UP = False
                 if keys.state('K_DOWN'):
-                    print('Backward')
+                    print('Down')
                     DOWN = True
                 else:
                     DOWN = False
                 if keys.state('K_RIGHT'):
+                    print('Rigth')
                     RIGHT = True
                 else:
                     RIGHT = False
-                if keys.state('K_RIGHT'):
-                    print('Right')
-                    RIGHT = True
                 if keys.state('K_LEFT'):
-                    LEFT = True
-                else:
-                    LEFT = False
-                if keys.state('K_LEFT'):
-                    print('left')
-
+                    print('Left')
                     LEFT = True
                 else:
                     LEFT = False
