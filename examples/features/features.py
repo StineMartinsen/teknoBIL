@@ -66,8 +66,7 @@ def control_motors():
 # Create the WebMethod class
 web_method = WebMethod(
     index_file=os.path.join(os.path.dirname(__file__), 'index.html'),
-    runtime_functions=control_motors,
-    custom_response=my_response
+    runtime_functions=control_motors
 )
 # Start serving the web page, blocks the program after this point
 web_method.serve()
