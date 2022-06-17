@@ -13,7 +13,7 @@ import RPi.GPIO as GPIO
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(4,GPIO.OUT) #UO
+GPIO.setup(4,GPIO.OUT) #UP
 GPIO.setup(5,GPIO.OUT) #DOWN
 GPIO.setup(6,GPIO.OUT) #RIGTH
 GPIO.setup(26,GPIO.OUT) #LEFT
