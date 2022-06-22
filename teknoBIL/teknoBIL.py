@@ -13,10 +13,20 @@ from lobe import ImageModel
 #set GPIO numbering mode and define output pins
 GPIO.setmode(GPIO.BCM)
 
+#MOTORINFO
 GPIO.setup(4,GPIO.OUT) #UP
 GPIO.setup(5,GPIO.OUT) #DOWN
 GPIO.setup(6,GPIO.OUT) #RIGTH
 GPIO.setup(26,GPIO.OUT) #LEFT
+
+#LEDS FOR RECOGNITION
+GPIO.setup(21, GPIO.OUT) #RED
+GPIO.setup(20, GPIO.OUT) #GREEN
+GPIO.setup(16, GPIO.OUT) #BLUE
+
+#LEDS FOR BACKING UP AND HEADLIGHTS
+GPIO.setup(23, GPIO.OUT) #BACKING LIGHTS
+GPIO.setup(24, GPIO.OUT) #HEADLIGHTS
 
 UP = False
 DOWN = False
@@ -52,10 +62,15 @@ def control_motors():
                 else:
                     LEFT = False
 
-                GPIO.output(4,UP)
+                GPIO.output(4,UP)                
                 GPIO.output(5,DOWN)
                 GPIO.output(6,RIGHT)
                 GPIO.output(26,LEFT)
+
+                #DRIVINGLIGHTS
+                GPIO.output(24,UP)
+                GPIO.output(23,DOWN)
+
 
                 ##Take picture to get input
                 if keys.state('K_SPACE'):
@@ -68,7 +83,7 @@ def control_motors():
 
 # Identify prediction and turn on appropriate LED
 def output(label):
-    print(label)
+    # print(label)
     if label == "ingenting":
         print("ingenting")
         sleep(5)
@@ -82,7 +97,7 @@ def output(label):
 # Take Photo
 def take_photo():
     # Quickly blink status light
-    print("Pressed")
+    print("Taking photo...")
     # Start the camera preview
     camera.start_preview(alpha=200)
     # wait 2s or more for light adjustment
