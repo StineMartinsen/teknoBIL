@@ -4,3 +4,5 @@ numpy==1.22.3
 lobe==0.6.2
 tflite-runtime==2.8.0
 keyboard==0.13.5
+flask
+

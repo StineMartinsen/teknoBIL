@@ -2,6 +2,7 @@
 Sever classes used in the web method
 """
 
+from cgitb import html
 import io
 import json
 import logging
@@ -12,11 +13,41 @@ from http import server
 import threading
 from threading import Thread, Condition
 from multiprocessing import Process
-
-
 import Pyro4
-
+from lobe import ImageModel
 from utils import server_ip, detect_pi, warning
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+result = "ingenting"
+@app.route('/index.html')
+def index():
+  return render_template('index.html')
+
+@app.route('/compare')
+def background_process_test():
+    print ("Hello")
+    return ("nothing")
+
+
+model = ImageModel.load('/home/tekno/original/Lobe')
+
+
+def compare():
+    res = model.predict_from_file('/home/tekno/Pictures/image.jpg')
+    return res.prediction
+
+
+def recognize(label):
+    print("RESULT:  " + label)
+    if label == "ingenting":
+        INGENTING = True
+    if label == "kaffe":
+        KAFFEKOPP = True
+    if label == "vann":
+        VANNFLASKE = True
+
 
 if detect_pi():
     import picamera
@@ -76,6 +107,12 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.end_headers()
             self.rov.run = False
+        elif self.path.startswith('/compare'):
+            print("COMPARING...")
+            result = compare()
+            recognize(result)
+
+
         else:
             path = os.path.join(self.base_folder, self.path[1:])
             if os.path.isfile(path):
@@ -222,18 +259,16 @@ def start_http_server(video_resolution, fps, server_port, index_file,
                                index_file=index_file,
                                custom_response=custom_response)
         server_thread = Thread(target=s.serve_forever, daemon=True)
+        camera.vflip = True
         camera.start_recording(stream_output, format='mjpeg')
 
         try:            
             print('Visit the webpage at {}'.format(server_ip(server_port)))
             server_thread.start()
-            print("uffameg")
             while True:
-                time.sleep(10)
-                camera.capture('/home/tekno/Pictures/haha.jpg', use_video_port=True, splitter_port=2)
-                print("Picture taken")
-        except:
-            print("tullball")
+                time.sleep(1)
+                camera.capture('/home/tekno/Pictures/image.jpg', use_video_port=True, splitter_port=2)
+                # print("Picture taken")
         finally:
             print('closing web server')
             camera.stop_recording()

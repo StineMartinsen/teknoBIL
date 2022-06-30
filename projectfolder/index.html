@@ -7,14 +7,38 @@
 </head>
 <body>
     <main>
-        <h2>Welcome to the features example</h2>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <!-- <script src="web.py"></script> -->
+        <script type=text/javascript>
+            $(function() {
+                $('a#button').on('click', function(e) {
+                e.preventDefault()
+                $.getJSON('/compare',
+                    function(data) {
+                    //do nothing
+                });
+                return false;
+                });
+            });
+            $(function() {
+                $('a#stop').on('click', function(e) {
+                e.preventDefault()
+                $.getJSON('/stop',
+                    function(data) {
+                    //do nothing
+                });
+                return false;
+                });
+            });
+        </script>
         <img src="stream.mjpg">
-        <p>
-            <a href="stop">Stop server</a>
-        </p>
-        <p>
-            Use arrow keys to print statements in the terminal window.
-        </p>
+        <div class='container'>
+                <form>
+                    <a href=# id=button><button class='btn btn-default'>COMPARE</button></a>
+                    <a href=# id="stop"><button class='btn btn-default'>STOP SERVER</button></a>
+                    OBJECT: 
+                </form>
+        </div>
     </main>
 </body>
 </html>
