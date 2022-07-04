@@ -23,7 +23,7 @@ app = Flask(__name__)
 result = "ingenting"
 @app.route('/index.html')
 def index():
-  return render_template('index.html')
+  return render_template('index.html', result=result)
 
 @app.route('/compare')
 def background_process_test():
@@ -41,13 +41,6 @@ def compare():
 
 def recognize(label):
     print("RESULT:  " + label)
-    if label == "ingenting":
-        INGENTING = True
-    if label == "kaffe":
-        KAFFEKOPP = True
-    if label == "vann":
-        VANNFLASKE = True
-
 
 if detect_pi():
     import picamera
