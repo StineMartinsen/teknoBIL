@@ -1,18 +1,84 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Verdana;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
-img {
-    width: 100%;
-    height: auto;
+
+.column {
+  float: left;
+  box-sizing: border-box;
 }
-main{
-    width: 700px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+
+.left {
+  width: 75%;
+  /* margin-top: 2.5vh;
+  margin-left: 2.5vh; */
+}
+
+.right {
+  width: 25%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.stream {
+  max-width: 70.5vw;
+  max-height: 95vh;
+  margin-right: auto;
+  border-radius: 8px;
+  margin-top: 2.6vh;
+  margin-bottom: 2.6vh;
+  margin-left: 2.6vh;
+  /* margin-right: 2.6vh; */
+}
+
+.compare {
+  max-width: 23vw;
+  max-height: 95vh;
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+  /* margin-left: 1.25vh; */
+  margin-right: 1.25vh;
+  border-radius: 8px;
+}
+
+.button1 {
+  display: block;
+  max-width: 22vw;
+  max-height: 10vh;
+  background: #4e9caf;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  line-height: 10vh;
+  /* position: absolute; */
+  margin-bottom: 2.5vh;
+  margin-right: 2.5vw;
+  margin-top: 25vh;
+}
+
+.button2 {
+  display: block;
+  max-width: 22vw;
+  max-height: 10vh;
+  background: #ff0000;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  line-height: 10vh;
+  /* position: absolute; */
+  margin-bottom: 2.5vh;
+  margin-right: 2.5vw;
 }
