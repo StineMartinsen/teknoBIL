@@ -5,7 +5,7 @@ $(function () {
       //Do nothing
     });
     var url = $("#re").attr("src");
-    $("#re").attr("src", url);
+    $("#re").attr("src", url+2);
     return false;
   });
 });
