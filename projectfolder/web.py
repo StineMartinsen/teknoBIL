@@ -107,12 +107,11 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             result = compare()
             n = text_file.write(result)
             text_file.close()
-            
-            print("COMPARING...")
-            recognize(result)
             src_dir = r'/home/teknostart/Pictures/image.jpg'
             dst_dir = r'/home/teknostart/teknoBIL/projectfolder/image.jpg'
-            shutil.copyfile(jpgfile, dst_dir)
+            shutil.copyfile(src_dir, dst_dir)
+            print("COMPARING...")
+            recognize(result)
 
 
         else:
