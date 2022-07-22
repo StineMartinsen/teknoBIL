@@ -28,7 +28,6 @@ a {
   clear: both;
 }
 
-
 .stream {
   max-width: 70.5vw;
   max-height: 95vh;
@@ -66,6 +65,9 @@ a {
   margin-right: 2.5vw;
   margin-top: 25vh;
 }
+button1:hover {
+  background: #27ae60;
+}
 
 .button2 {
   display: block;
@@ -81,4 +83,8 @@ a {
   /* position: absolute; */
   margin-bottom: 2.5vh;
   margin-right: 2.5vw;
+}
+
+button2:hover {
+  background: #ae4d27;
 }
