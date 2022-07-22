@@ -4,7 +4,11 @@ $(function () {
     $.getJSON("/compare", function (data) {
       //Do nothing
     });
-    $("#righty").reload();
+    var url = $("#re").attr("src");
+    var timestamp = new Date().getTime();
+    $("#re").attr("src", url);
+    console.log(timestamp);
+    console.log($("#re").attr("src"));
     return false;
   });
 });
