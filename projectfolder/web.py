@@ -37,7 +37,7 @@ model = ImageModel.load('/home/teknostart/teknoBIL/Lobe')
 
 
 def compare():
-    res = model.predict_from_file('/home/teknostart/Pictures/image.jpg')
+    res = model.predict_from_file('/home/teknostart/teknoBIL/projectfolder/image.jpg')
     return res.prediction
 
 
