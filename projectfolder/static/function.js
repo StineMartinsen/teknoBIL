@@ -3,6 +3,7 @@ $(function () {
     e.preventDefault();
     $.getJSON("/compare", function (data) {
       //Do nothing
+      console.log("compare");
     });
 
     return false;
@@ -14,8 +15,8 @@ $(function () {
     e.preventDefault();
     $.getJSON("/stop", function (data) {
       //do nothing
+      console.log("stop");
     });
     return false;
   });
 });
-console.log("hello");
