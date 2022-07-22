@@ -4,9 +4,9 @@ $(function () {
     $.getJSON("/compare", function (data) {
       //Do nothing
     });
-    var url = $("#re").attr("src");
+    // var url = $("#re").attr("src");
     var timestamp = new Date().getTime();
-    $("#container").attr("src", url + `?t=` + timestamp);
+    $("#re").attr("src", 'image.jpg?t'+ timestamp);
     console.log(timestamp);
     console.log($("#re").attr("src"));
     return false;
