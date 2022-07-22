@@ -10,11 +10,11 @@ $(function () {
   });
 });
 
-function readFile() {
-  jQuery.get('result.txt', function (txt) {
-    $('#outputBx').text(txt);
-  });
-}
+// function readFile() {
+//   jQuery.get('result.txt', function (txt) {
+//     $('#outputBx').text(txt);
+//   });
+// }
 
 $(function () {
   $("a#stop").on("click", function (e) {
