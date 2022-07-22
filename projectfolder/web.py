@@ -103,16 +103,15 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             self.end_headers()
             self.rov.run = False
         elif self.path.startswith('/compare'):
-            text_file = open('/home/teknostart/teknoBIL/projectfolder/result.txt', "w")
             result = compare()
-            n = text_file.write(result)
-            text_file.close()
             src_dir = r'/home/teknostart/Pictures/image.jpg'
             dst_dir = r'/home/teknostart/teknoBIL/projectfolder/image.jpg'
             shutil.copyfile(src_dir, dst_dir)
+            text_file = open('/home/teknostart/teknoBIL/projectfolder/result.txt', "w")
+            n = text_file.write(result)
+            text_file.close()
             print("COMPARING...")
             recognize(result)
-
 
         else:
             path = os.path.join(self.base_folder, self.path[1:])
