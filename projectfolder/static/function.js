@@ -1,6 +1,6 @@
 $(function () {
   $("a#button").on("click", function (e) {
-    window.location.reload();
+    $("#righty").reload();
     e.preventDefault();
     $.getJSON("/compare", function (data) {
       //Do nothing
