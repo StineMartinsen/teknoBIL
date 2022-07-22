@@ -103,7 +103,7 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             self.end_headers()
             self.rov.run = False
         elif self.path.startswith('/compare'):
-            text_file = open('/home/teknostart/teknoBIL/projectfolder/result.txt", "w"')
+            text_file = open('/home/teknostart/teknoBIL/projectfolder/result.txt', "w")
             result = compare()
             n = text_file.write(result)
             text_file.close()
