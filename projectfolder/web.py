@@ -37,7 +37,7 @@ model = ImageModel.load('/home/teknostart/teknoBIL/Lobe')
 
 
 def compare():
-    res = model.predict_from_file('/home/teknostart/teknoBIL/projectfolder/image.jpg')
+    res = model.predict_from_file('/home/teknostart/Pictures/image.jpg')
     return res.prediction
 
 
@@ -107,12 +107,12 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             result = compare()
             n = text_file.write(result)
             text_file.close()
+            
             print("COMPARING...")
             recognize(result)
-            # src_dir = "/home/teknostart/Pictures/"
-            # dst_dir = "/home/teknostart/teknoBIL/projectfolder"
-            # for jpgfile in glob.iglob(os.path.join(src_dir, "*.jpg")):
-            #     shutil.copy(jpgfile, dst_dir)
+            src_dir = r'/home/teknostart/Pictures/'
+            dst_dir = r'/home/teknostart/teknoBIL/projectfolder'
+            shutil.copyfile(jpgfile, dst_dir)
 
 
         else:
@@ -269,7 +269,7 @@ def start_http_server(video_resolution, fps, server_port, index_file,
             server_thread.start()
             while True:
                 time.sleep(0.1)
-                camera.capture('/home/teknostart/teknoBIL/projectfolder/image.jpg', use_video_port=True, splitter_port=2)
+                camera.capture('/home/teknostart/Pictures/image.jpg', use_video_port=True, splitter_port=2)
                 
         finally:
             print('closing web server')
