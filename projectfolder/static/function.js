@@ -4,8 +4,15 @@ $(function () {
     $.getJSON("/compare", function (data) {
       //Do nothing
     });
-    
-    console.log("compare");
+    var reimg;
+    window.onload = function () {
+      reimg = document.getElementById("re");
+      setInterval(function () {
+        reimg.src = reimg.src.replace(/\?.*/, function () {
+          return "?" + new Date();
+        });
+      }, 5000);
+    };
     return false;
   });
 });
@@ -15,7 +22,6 @@ $(function () {
     e.preventDefault();
     $.getJSON("/stop", function (data) {
       //do nothing
-      console.log("stop");
     });
     return false;
   });
