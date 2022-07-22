@@ -1,10 +1,10 @@
 $(function () {
   $("a#button").on("click", function (e) {
+    window.location.reload();
     e.preventDefault();
     $.getJSON("/compare", function (data) {
       //Do nothing
     });
-    window.location.reload();
     return false;
   });
 });
