@@ -6,21 +6,15 @@ $(function () {
       //Do nothing
     });
 
-    let textarea = document.querySelector("textarea");
-    let files = 'result.txt';
-    if (files.length == 0) return;
-    const file = files[0];
-    let reader = new FileReader();
-    reader.onload = (e) => {
-      const file = e.target.result;
-      const lines = file.split(/\r\n|\n/);
-      textarea.value = lines.join("\n");
-    };
-    reader.onerror = (e) => alert(e.target.error.name);
-    reader.readAsText(file);
     return false;
   });
 });
+
+function readFile() {
+  jQuery.get('result.txt', function (txt) {
+    $('#outputBx').text(txt);
+  });
+}
 
 $(function () {
   $("a#stop").on("click", function (e) {
