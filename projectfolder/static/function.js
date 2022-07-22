@@ -5,7 +5,8 @@ $(function () {
       //Do nothing
     });
     var url = $("#re").attr("src");
-    $("#re").attr("src", none);
+    
+    $("#re").attr("src", "none");
     $("#re").attr("src", url);
 
     return false;
