@@ -4,7 +4,7 @@ $(function () {
     $.getJSON("/compare", function (data) {
       //Do nothing
     });
-    $("#column right").load("index.html #column right");
+    $("#righty").load("index.html #righty");
     return false;
   });
 });
