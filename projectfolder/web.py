@@ -19,6 +19,9 @@ import Pyro4
 from lobe import ImageModel
 from utils import server_ip, detect_pi, warning
 from flask import Flask, render_template
+from PIL import ImageFile
+
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 app = Flask(__name__)
 
