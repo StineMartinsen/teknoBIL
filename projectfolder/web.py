@@ -105,11 +105,11 @@ class RequestHandler(server.BaseHTTPRequestHandler):
         elif self.path.startswith('/compare'):
             print("COMPARING...")
             result = compare()
+            recognize(result)
             # src_dir = "/home/teknostart/Pictures/"
             # dst_dir = "/home/teknostart/teknoBIL/projectfolder"
             # for jpgfile in glob.iglob(os.path.join(src_dir, "*.jpg")):
             #     shutil.copy(jpgfile, dst_dir)
-            # recognize(result)
 
 
         else:
