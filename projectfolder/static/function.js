@@ -4,7 +4,7 @@ $(function () {
     $.getJSON("/compare", function (data) {
       //Do nothing
     });
-    $("#righty").load();
+    $("#righty").load(location.href + " #righty");
     return false;
   });
 });
