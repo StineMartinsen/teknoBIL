@@ -65,7 +65,7 @@ a {
   margin-right: 2.5vw;
   margin-top: 25vh;
 }
-button1:hover {
+.button1:hover {
   background: #27ae60;
 }
 
@@ -85,6 +85,11 @@ button1:hover {
   margin-right: 2.5vw;
 }
 
-button2:hover {
+.button2:hover {
   background: #ae4d27;
+}
+
+.result{
+  max-width: 10vw;
+  max-height: 10vh;
 }

@@ -5,9 +5,12 @@ $(function () {
     $.getJSON("/compare", function (data) {
       //Do nothing
     });
+
+    
     return false;
   });
 });
+
 
 $(function () {
   $("a#stop").on("click", function (e) {

@@ -37,7 +37,7 @@ model = ImageModel.load('/home/teknostart/teknoBIL/Lobe')
 
 
 def compare():
-    res = model.predict_from_file('/home/teknostart/Pictures/image.jpg')
+    res = model.predict_from_file('/home/teknostart/teknoBIL/projectfolder/image.jpg')
     return res.prediction
 
 
@@ -103,8 +103,11 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             self.end_headers()
             self.rov.run = False
         elif self.path.startswith('/compare'):
-            print("COMPARING...")
+            text_file = open('/home/teknostart/teknoBIL/projectfolder/result.txt", "w"')
             result = compare()
+            n = text_file.write(result)
+            text_file.close()
+            print("COMPARING...")
             recognize(result)
             # src_dir = "/home/teknostart/Pictures/"
             # dst_dir = "/home/teknostart/teknoBIL/projectfolder"
