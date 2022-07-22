@@ -4,6 +4,8 @@ Sever classes used in the web method
 
 from cgitb import html
 import io
+import glob
+import shutil
 import json
 import logging
 import os
@@ -31,11 +33,11 @@ def background_process_test():
     return ("nothing")
 
 
-model = ImageModel.load('/home/tekno/original/Lobe')
+model = ImageModel.load('/home/teknostart/teknoBIL/Lobe')
 
 
 def compare():
-    res = model.predict_from_file('/home/tekno/Pictures/image.jpg')
+    res = model.predict_from_file('/home/teknostart/Pictures/image.jpg')
     return res.prediction
 
 
@@ -103,6 +105,10 @@ class RequestHandler(server.BaseHTTPRequestHandler):
         elif self.path.startswith('/compare'):
             print("COMPARING...")
             result = compare()
+            src_dir = "/home/teknostart/Pictures/"
+            dst_dir = "/home/teknostart/teknoBIL/projectfolder"
+            for jpgfile in glob.iglob(os.path.join(src_dir, "*.jpg")):
+                shutil.copy(jpgfile, dst_dir)
             recognize(result)
 
 
@@ -260,8 +266,7 @@ def start_http_server(video_resolution, fps, server_port, index_file,
             server_thread.start()
             while True:
                 time.sleep(1)
-                camera.capture('/home/tekno/Pictures/image.jpg', use_video_port=True, splitter_port=2)
-                # print("Picture taken")
+                camera.capture('/home/teknostart/Pictures/image.jpg', use_video_port=True, splitter_port=2)
         finally:
             print('closing web server')
             camera.stop_recording()
