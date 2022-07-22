@@ -5,8 +5,8 @@ $(function () {
       //Do nothing
     });
     var url = $("#re").attr("src");
-    // $("#re").removeAttr("src").attr("src", url);
-    $("#container").attr("src", url + `?v=${Math.random()}`);
+    var timestamp = new Date().getTime();
+    $("#container").attr("src", url + `?t=` + timestamp);
     return false;
   });
 });
