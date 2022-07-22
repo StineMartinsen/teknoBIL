@@ -110,8 +110,8 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             
             print("COMPARING...")
             recognize(result)
-            src_dir = r'/home/teknostart/Pictures/'
-            dst_dir = r'/home/teknostart/teknoBIL/projectfolder'
+            src_dir = r'/home/teknostart/Pictures/image.jpg'
+            dst_dir = r'/home/teknostart/teknoBIL/projectfolder/image.jpg'
             shutil.copyfile(jpgfile, dst_dir)
 
 
