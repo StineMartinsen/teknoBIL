@@ -104,12 +104,12 @@ class RequestHandler(server.BaseHTTPRequestHandler):
             self.rov.run = False
         elif self.path.startswith('/compare'):
             result = compare()
-            # src_dir = r'/home/teknostart/Pictures/image.jpg'
-            # dst_dir = r'/home/teknostart/teknoBIL/projectfolder/image.jpg'
-            # shutil.copyfile(src_dir, dst_dir)
-            # text_file = open('/home/teknostart/teknoBIL/projectfolder/result.txt', "w")
-            # n = text_file.write(result)
-            # text_file.close()
+            src_dir = r'/home/teknostart/Pictures/image.jpg'
+            dst_dir = r'/home/teknostart/teknoBIL/projectfolder/image.jpg'
+            shutil.copyfile(src_dir, dst_dir)
+            text_file = open('/home/teknostart/teknoBIL/projectfolder/result.txt', "w")
+            n = text_file.write(result)
+            text_file.close()
             print("COMPARING...")
             recognize(result)
 
