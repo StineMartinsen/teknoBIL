@@ -5,7 +5,7 @@ $(function () {
       //Do nothing
     });
     var url = $("#re").attr("src");
-    $("#re").attr("src", url + `?v=${new Date().getTime()}`);
+    $("#re").attr("src", url);
     return false;
   });
 });
