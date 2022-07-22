@@ -3,9 +3,9 @@ $(function () {
     e.preventDefault();
     $.getJSON("/compare", function (data) {
       //Do nothing
-      console.log("compare");
     });
-
+    
+    console.log("compare");
     return false;
   });
 });
