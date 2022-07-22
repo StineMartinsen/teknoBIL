@@ -1,6 +1,6 @@
 $(function () {
   $("a#button").on("click", function (e) {
-    // window.location.reload();
+    window.location.reload();
     e.preventDefault();
     $.getJSON("/compare", function (data) {
       //Do nothing
@@ -10,11 +10,11 @@ $(function () {
   });
 });
 
-// function readFile() {
-//   jQuery.get('result.txt', function (txt) {
-//     $('#outputBx').text(txt);
-//   });
-// }
+function readFile() {
+  jQuery.get('result.txt', function (txt) {
+    $('#outputBx').text(txt);
+  });
+}
 
 $(function () {
   $("a#stop").on("click", function (e) {
