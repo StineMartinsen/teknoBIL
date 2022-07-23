@@ -269,7 +269,7 @@ def start_http_server(video_resolution, fps, server_port, index_file,
             print('Visit the webpage at {}'.format(server_ip(server_port)))
             server_thread.start()
             while True:
-                time.sleep(1)
+                time.sleep(0.1)
                 camera.capture('/home/teknostart/Pictures/image.jpg', use_video_port=True, splitter_port=2)
                 
         finally:
