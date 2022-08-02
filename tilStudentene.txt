@@ -1,0 +1,13 @@
+sudo raspi-config 							(aktiver nett = Norge, enable kamera.)
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+date 										(sjekke om det er riktig dato)
+sudo date -s '26 Jul 2022 19:42' 					(skrive dags dato)
+sudo apt-get update
+sudo apt-get dist-upgrade
+git clone https://github.com/StineMartinsen/teknoBIL.git	(Riktig git)
+cd teknoBIL/
+pip3 install -r requirements.txt
+sudo apt-get install libatlas-base-dev
+sudo apt-get install python3-pyro4					hvis feilmelding sier pyro4 not found
+cd projectfolder/
+python runCode.py

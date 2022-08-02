@@ -1,0 +1,7 @@
+source-directory /etc/network/interfaces.d/*
+
+allow-hotplug wlan0
+iface wlan0 inet manual
+	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+iface wlan0 inet dhcp
